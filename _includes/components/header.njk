@@ -1,0 +1,51 @@
+<header class="slider">
+  <div class="main-slider">
+    <div class="swiper-wrapper">
+      
+      {% for swiperdata in swiperdatas %}
+      <div class="swiper-slide">
+        <div class="slide-inner" data-background="{{ swiperdata.image }}">
+          <div class="container" data-swiper-parallax="200">
+            <h6 class="tagline">{{ swiperdata.tagline }}</h6>
+            <h2 class="name">{{ swiperdata.name }}<br>
+              <strong>{{ swiperdata.name2 }}</strong></h2>
+            <ul class="features">
+              <li>
+                <div class="rate">
+                  <svg class="circle-chart" viewBox="0 0 30 30" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="circle-chart__background" stroke="#2f3439" stroke-width="2" fill="none" cx="15" cy="15" r="14">
+                    </circle>
+                    <circle class="circle-chart__circle" stroke="#4eb04b" stroke-width="2" stroke-dasharray="50,100" cx="15" cy="15" r="14">
+                    </circle>
+                  </svg>
+                  <b>{{ swiperdata.imdb_score }}</b> IMDB SCORE </div>
+                <!-- end rate --> 
+              </li>
+              <li>
+                <div class="year">{{ swiperdata.year }}</div>
+              </li>
+              <li>
+                <div class="hd">{{ swiperdata.quality }} <b>{{ swiperdata.quality2 }}</b></div>
+              </li>
+              <li>
+                <div class="tags">{{ swiperdata.tags }}</div>
+              </li>
+            </ul>
+            <p class="description"> {{ swiperdata.description }}<br>{{ swiperdata.description2 }}</p>
+            <a href="/movie-single" class="play-btn">{{ swiperdata.playbutton }}</a> <a href="/account" class="add-btn">+</a> 
+            </div>
+          <!-- end container --> 
+        </div>
+        <!-- end slide-inner --> 
+      </div>
+      <!-- end swiper-slide -->
+      {% endfor %}
+       
+    </div>
+    <!-- end swiper-wrapper -->
+    <div class="swiper-pagination"></div>
+    <!-- end swiper-pagination --> 
+  </div>
+  <!-- end main-slider --> 
+</header>
+<!-- end slider -->
